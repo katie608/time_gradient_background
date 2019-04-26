@@ -8,14 +8,20 @@
 </head>
 <body id="main" style=100%>
 
-<body onload="setBackground();">
+<body onload="setBackground();" onclick="toggleClouds();">
 
 <!-- Credit for stars code to  https://github.com/LunarLogic/auroral  -->
 <div id="stars" class=""></div>
+<div id="moon" class=""></div>
+<div id="moonshadow" class=""></div>
+<div id="clouds" class=""></div>
 
 <script>
 var x = document.getElementById("main");
 var s = document.getElementById("stars");
+var m = document.getElementById("moon");
+var ms = document.getElementById("moonshadow");
+var cl = document.getElementById("clouds");
 
 function setBackground() {
   var userTime = new Date();
@@ -24,7 +30,10 @@ function setBackground() {
   if (hour<=4 || hour>21) {
     // nighttime DONE
     x.style.background = "linear-gradient(0deg,#001538,#000000)";
-    s.className = "stars"
+    // trigger stars and moon when it is night
+    s.className = "stars";
+    m.className = "moon";
+    ms.className = "moonshadow";
   }else if (hour==5) {
     // 5 am DONE
     x.style.background = "linear-gradient(0deg,#62492e,#252a3c,#15192c,#05050e)";
@@ -83,6 +92,14 @@ function setBackground() {
     x.style.background = "darkblue";
   }
   setTimeout(setBackground, 6000);
+}
+
+function toggleClouds() {
+  if (cl.className == "clouds"){
+    cl.className = "";
+  } else {
+      cl.className = "clouds";
+  }
 }
 </script>
 
