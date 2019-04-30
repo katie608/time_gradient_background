@@ -39,7 +39,7 @@ function setBackground() {
     x.style.background = "linear-gradient(0deg,#62492e,#252a3c,#15192c,#05050e)";
   }else if (hour==6) {
     // 6 am DONE
-    x.style.background = "linear-gradient(0deg,#8c4a5f,#827143,#526884,#18234f)";
+    x.style.background = "linear-gradient(0deg,#8c4a5f,#415772,#0f1738)";
   }else if (hour==7) {
     // 7 am DONE
     x.style.background = "linear-gradient(0deg, #8c4a5f,#526884,#18234f)";
@@ -98,7 +98,8 @@ function toggleClouds() {
   if (cl.className == "clouds"){
     cl.className = "";
   } else {
-      cl.className = "clouds";
+      cl.className = "";
+      // Change the class name to "clouds" to get clouds to work
   }
 }
 </script>
